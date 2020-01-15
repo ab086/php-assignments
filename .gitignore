@@ -11,9 +11,9 @@
 
 ### Misc Files ###
 # Ignore compressed files
-.zip
-.rar
-.7z
+*.zip
+*.rar
+*.7z
 
 # Ignore node_modules
 node_modules/
