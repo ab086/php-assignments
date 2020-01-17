@@ -10,10 +10,8 @@
 .history
 
 ### Misc Files ###
-# Ignore compressed files
-*.zip
-*.rar
-*.7z
+# Ignore compressed files folder
+compressed_files/
 
 # Ignore node_modules
 node_modules/
