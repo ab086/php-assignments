@@ -15,21 +15,21 @@
         // Set errorMessage to an empty string if no valid entries
         // This should be done by default
         $errorMessage = '';
-
+        
         // Validate investment
         if($investment === FALSE) {
             $errorMessage = 'Investment must be a valid number.';
         } else if($investment <= 0) {
             $errorMessage = 'Investment must be greater than zero.';
         }
-        
+
         // Validate interest rate
         if($interestRate === FALSE) {
             $errorMessage = 'Interest rate must be a valid number.';
         } else if($interestRate <= 0) {
             $errorMessage = 'Interest rate must be greater than zero.';
         }
-
+        
         // Validate years
         if($years === FALSE) {
             $errorMessage = 'Years must be a valid number.';
@@ -64,12 +64,15 @@
 
         <label>Investment Amount: </label>
         <span><?=$investment_f ?></span>
+        <br>
 
         <label>Yearly Interest Rate: </label>
         <span><?=$yearlyRate_f ?></span>
+        <br>
 
         <label>Future Value: </label>
         <span><?=$futureValue_f ?></span>
+        <br>
     </main>
     
 </body>
