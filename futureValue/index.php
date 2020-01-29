@@ -32,7 +32,7 @@
             
             <div id="data">
                 <label for="investment">Investment Amount</label>
-                <input type="text" name="invesment" value="<?=htmlspecialchars($investment);?>">
+                <input type="text" name="investment" value="<?=htmlspecialchars($investment);?>">
 
                 <br>
 
