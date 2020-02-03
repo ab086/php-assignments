@@ -35,7 +35,7 @@
             $errorMessage = 'Years must be a valid number.';
         } else if($years <= 0) {
             $errorMessage = 'Years must be greater than zero.';
-        } else if($years > 30) {
+        } else if($years > 31) {
             $errorMessage = 'Years must be less than 31.';
         }
 
