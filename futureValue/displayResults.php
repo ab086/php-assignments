@@ -7,7 +7,7 @@
     <title>Results</title>
 
     <?php
-        // Get data from the form
+        // Get data from the form and validate it
         $investment = filter_input(INPUT_POST, 'investment', FILTER_VALIDATE_FLOAT);
         $interestRate = filter_input(INPUT_POST, 'interestRate', FILTER_VALIDATE_FLOAT);
         $years = filter_input(INPUT_POST, 'years', FILTER_VALIDATE_INT);
