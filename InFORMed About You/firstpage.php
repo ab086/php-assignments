@@ -3,10 +3,10 @@
 
 
     //php variables and data types
-    $count = 6// interger
-    $price = 5.5//double/floating point 
-    $first_name = "Bob"//string
-    $last_name = "James"//stirng
+    $count = 6; // interger
+    $price = 5.5; //double/floating point 
+    $first_name = "Bob"; //string
+    $last_name = "James"; //stirng
     $isValid = true;//boolean
     $nullVariable; //Null varriable 
 
@@ -15,7 +15,6 @@
     var_dump($cars);
 
     //objects 
-
     class Experiment {
         function Experiment(){
             $this->version = NULL;
