@@ -11,7 +11,7 @@
     switch($action) {
         
         case "Login":
-            $textName = filter_input(INPUT_POST, "userName");
+            $textName = filter_input(INPUT_GET, "userName");
 
             if($textName == "Austin") {
                 $_SESSION['user'] = "Austin";

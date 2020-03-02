@@ -7,7 +7,7 @@
 </head>
 <body>
     
-
-    <script>console.log($textName)</script>
+    
+    
 </body>
 </html>

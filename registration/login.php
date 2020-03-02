@@ -13,6 +13,7 @@
         <br>
         <br>
         <input type="submit" value="Login" name="action">
+        <input type="button" value="Register" name="action">
     </form>
 </body>
 </html>
