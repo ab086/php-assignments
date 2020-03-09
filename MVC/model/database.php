@@ -1,56 +1,45 @@
 <?php
 
-// <!-- reads in the products from text file and returns an array -->
+    // Establish connection
+    $username = "class";
+    $password = "CIS239";
+    $host = "localhost";
+    $db_name = "products";
 
-function getProducts()
-{
-    
-    $file = fopen('assets/products.csv', 'rb');
-    $products = array();
-    while (!feof($file)){
-        $product = fgetcsv($file);
-        if ($product === false) continue;
-        $products[] = $product;
-    }
-    //print_r($products);
-    return $products;
-}
-
-
-//display one product
-
-function displayAProduct($theProduct)
-{
-    $products = getProducts();
-    
-    foreach ($products as $product)
-    {
-        //echo($product);
-        if ($product[0] == $theProduct){
-            return $product;
-        }
-
+    try {
+        $db = new mysqli($host, $username, $password, $db_name);
+        echo("Connected");
+    } catch (Exception $e) {
+        exit($e->getMessage());
     }
 
-}
+    function getProducts() {
+        global $db;
+        $sql = "SELECT * FROM product";
+        $query = mysqli_query($db, $sql);
+        $recordSet = mysqli_fetch_all($query);
+        //var_dump($recordSet);
 
-function addProducts($id, $name, $price)
-{
-    $products = array("$id", "$name", "$price");
-    //print_r($products);
-    $file = fopen('assets/products.csv', 'ab');
-    
-    // foreach($products as $prod)
-    // {
-        fputcsv($file, $products);
-    // }
-   
-    
-    fclose($file);
-    
-    
-}
+        return($recordSet);
+    }
 
+    function displayAProduct($id) {
+        global $db;
 
+        $sql = "SELECT * FROM `product` WHERE `id` = '$id'";
+        // echo($sql);
+        $query = mysqli_query($db, $sql);
+        $recordSet = mysqli_fetch_array($query);
+
+        return($recordSet);
+    }
+
+    function addProducts($id, $name, $price) {
+        global $db;
+
+        $sql = "INSERT INTO `product` (`id`, `productName`, `price`) VALUES ('$id', '$name', '$price')";
+        //echo($sql);
+        $query = mysqli_query($db, $sql);
+    }
 
 ?>

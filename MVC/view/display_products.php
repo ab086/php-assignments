@@ -16,7 +16,7 @@
         $myProducts = getProducts();
         foreach($myProducts as $product)
         {
-            echo("<a href='?id=$product[0]'>$product[0]</a> $product[1] $product[2]<br>");
+            echo("<a href='?id=$product[0]'>$product[0]</a> $product[1] $$product[2]<br>");
         }
 
     ?>

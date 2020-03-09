@@ -17,6 +17,7 @@
 <section>
     <p><?=$product[0]?></p>
     <p><?=$product[2]?></p>
+    
 </section>
 
 <a href="?action=add">Add A Product</a>

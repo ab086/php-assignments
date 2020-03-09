@@ -26,7 +26,7 @@
         }
        
         
-    } else if ($action=='add')
+    } else if ($action == 'add')
     {
         include "view/add_products.php";
         
