@@ -7,8 +7,8 @@
 </head>
 <body>
     <p>Enter a username below</p>
-    <form action="index.php" method="post">
-        <label for="newUser">UserName: </label>
+    <form action="" method="post">
+        <label for="newUser">Username: </label>
         <input type="text" name="newUser" required>
         <br>
         <br>

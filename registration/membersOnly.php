@@ -6,8 +6,21 @@
     <title>Members Only</title>
 </head>
 <body>
+    <a href="index.php?lo=y">Logout</a>
     
-    
+    <?php
+
+        $file = fopen("quotes.txt", "rb");
+        $quote = array();
+
+        while(!feof($file)) {
+            $quote[] = trim(fgets($file));
+        }
+
+        $randomIndex = rand(0, sizeof($quote));
+    ?>
+
+    <h1><?=$quote[$randomIndex]?></h1>
     
 </body>
 </html>

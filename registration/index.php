@@ -2,6 +2,8 @@
 
     session_start();
 
+    echo("<link rel='stylesheet' href='styles.css'");
+
     $path = getcwd();
 
 
@@ -21,15 +23,32 @@
 
         case("Login"):
             $textName = filter_input(INPUT_POST, "username");
+            $file = fopen("users.txt", "rb");
+            $names = array();
+
             if(!empty($textName)) {
-                $_SESSION['user'] = $textName;
-                include "membersOnly.php";
+
+                while(!feof($file)) {
+                    $names[] = trim(fgets($file));
+                }
+
+                if($textName == $names[0]) {
+                    $_SESSION['user'] = $textName;
+                    include "membersOnly.php";
+                } else if($textName == "testUser") {
+                    $_SESSION['user'] = $textName;
+                    include "membersOnly.php";
+                } else {
+                    echo("<p>User doesn't exist! Do you need to register?</p>");
+                }
                 
             } else {
-                echo("<p>User doesn't exist! Do you need to register first?");
-                include "login.php";
+                echo("<p>Username cannot be blank</p>");
+                // include "login.php";
             }
-            echo($textName);
+            //echo($textName);
+
+            fclose($file);
         break;
 
         case("y"):
@@ -41,10 +60,9 @@
         case("Register"):
             session_destroy();
             include "registration.php";
-            $file = fopen("usernames.txt", "rb");
-
-            $newUsername = filter_input(INPUT_POST, "userName");
-            fclose($file);
+            $newUsername = filter_input(INPUT_POST, "newUser");
+            file_put_contents("users.txt", $newUsername);
+        break;
 
         default:
             include "login.php";

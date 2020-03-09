@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+    background-color: rgb(228, 228, 228);
+    
+    margin-top: 350px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: blue;
+}
